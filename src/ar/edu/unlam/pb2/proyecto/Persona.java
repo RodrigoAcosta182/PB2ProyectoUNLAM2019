@@ -6,7 +6,9 @@ import java.time.Period;
 public class Persona {
 	private String nombre;
 	private String apellido;
-	private LocalDate nacimiento;
+	private Integer dia;
+	private Integer mes;
+	private Integer anio;
 	private Integer edad;
 	private Integer dni;
 	private Boolean sexo;
@@ -14,11 +16,13 @@ public class Persona {
 	public Persona() {
 	}
 
-	public Persona(String nombre, String apellido, LocalDate nacimiento, Integer edad, Integer dni, Boolean sexo) {
+	public Persona(String nombre, String apellido, Integer dia, Integer mes, Integer anio, Integer edad, Integer dni, Boolean sexo) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.nacimiento = nacimiento;
+		this.dia = dia;
+		this.mes = mes;
+		this.anio = anio;
 		this.edad = edad;
 		this.dni = dni;
 		this.sexo = sexo;
@@ -40,12 +44,29 @@ public class Persona {
 		apellido = apellido;
 	}
 
-	public LocalDate getNacimiento() {
-		return nacimiento;
+
+	public Integer getDia() {
+		return dia;
 	}
 
-	public void setNacimiento(LocalDate nacimiento) {
-		this.nacimiento = nacimiento;
+	public void setDia(Integer dia) {
+		this.dia = dia;
+	}
+
+	public Integer getMes() {
+		return mes;
+	}
+
+	public void setMes(Integer mes) {
+		this.mes = mes;
+	}
+
+	public Integer getAnio() {
+		return anio;
+	}
+
+	public void setAnio(Integer anio) {
+		this.anio = anio;
 	}
 
 	public Integer getEdad() {
@@ -73,10 +94,13 @@ public class Persona {
 	}
 
 	public Integer calcularEdad() {
-		LocalDate hoy = LocalDate.now();
-		Period periodo = Period.between(this.nacimiento, hoy);
-		this.edad = periodo.getYears();
-		return this.edad;
+		Integer edad;
+		
+		LocalDate nacimiento = LocalDate.of(anio, mes, dia);
+		LocalDate actual = LocalDate.now();
+		Period periodo = Period.between(nacimiento, actual);
+		
+		return edad = periodo.getYears();
 	}
 
 }
