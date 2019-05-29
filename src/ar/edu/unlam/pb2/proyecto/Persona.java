@@ -16,7 +16,8 @@ public class Persona {
 	public Persona() {
 	}
 
-	public Persona(String nombre, String apellido, Integer dia, Integer mes, Integer anio, Integer edad, Integer dni, Boolean sexo) {
+	public Persona(String nombre, String apellido, Integer dia, Integer mes, Integer anio, Integer edad, Integer dni,
+			Boolean sexo) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -43,7 +44,6 @@ public class Persona {
 	public void setApellido(String apellido) {
 		apellido = apellido;
 	}
-
 
 	public Integer getDia() {
 		return dia;
@@ -95,12 +95,17 @@ public class Persona {
 
 	public Integer calcularEdad() {
 		Integer edad;
-		
+
 		LocalDate nacimiento = LocalDate.of(anio, mes, dia);
 		LocalDate actual = LocalDate.now();
 		Period periodo = Period.between(nacimiento, actual);
-		
+
 		return edad = periodo.getYears();
 	}
 
+	public Boolean esMasculino() {
+		Boolean sexo = true;
+		return sexo;
+
+	}
 }

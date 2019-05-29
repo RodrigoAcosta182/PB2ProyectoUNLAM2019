@@ -11,4 +11,13 @@ public class Medico extends Persona {
 		
 	}
 	
+	public Paciente atenderPaciente() {
+		return null;
+		
+	}
+	
+	public Turno generarTurno() {
+		return null;
+		
+	}
 }

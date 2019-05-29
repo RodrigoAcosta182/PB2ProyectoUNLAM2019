@@ -10,4 +10,19 @@ public class Paciente extends Persona {
 		super(nombre, apellido, dia, mes, anio, edad, dni, sexo);
 
 	}
+	
+	public Turno pedirTurno() {
+		return null;
+		
+	}
+	
+	public Turno cancelarTurno(){
+		return null;
+		
+	}
+	
+	public Turno cambiarTurno(){
+		return null;
+		
+	}
 }

@@ -11,4 +11,9 @@ public class Tecnico extends Persona {
 		this.especialidad = especialidad;
 
 	}
+	
+	public Paciente atenderPaciente() {
+		return null;
+		
+	}
 }
